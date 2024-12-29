@@ -22,7 +22,7 @@ include "koneksi.php";
   </head>
   <body>
     <!-- nav begin -->
-    <nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top shadow">
       <div class="container">
         <a class="navbar-brand" href="#">My Daily Journal</a>
         <button
@@ -78,9 +78,9 @@ include "koneksi.php";
     </nav>
     <!-- nav end -->
     <!-- hero begin -->
-    <section id="hero" class="text-center p-5 bg-primary-subtle text-sm-start">
+    <section id="hero" class="text-center p-5 text-sm-start bg-primary-subtle">
       <div class="container">
-        <div class="d-sm-flex flex-sm-row-reverse align-items-center">
+        <div class="d-sm-flex flex-sm-row-reverse align-items-center ">
           <img src="img/udinus.jpg" class="img-fluid rounded 4" width="500" />
           <div>
             <h1 class="fw-bold display-4">
@@ -113,7 +113,7 @@ include "koneksi.php";
                 ?>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="img/<?= $row["gambar"]?>" class="card-img-top" alt="..." />
+                            <img src="img/<?= $row["gambar"]?>" class="card-img-top" width="300" height="300" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title"><?= $row["judul"]?></h5>
                                 <p class="card-text">
@@ -179,7 +179,7 @@ include "koneksi.php";
         <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
           <div class="col">
             <div class="card h-100">
-              <div class="card-header bg-danger text-white">SENIN</div>
+              <div class="card-header bg-primary text-black">SENIN</div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   Probabilitas dan Statistik<br />12.30-15.00 | H.4.7
@@ -192,7 +192,7 @@ include "koneksi.php";
           </div>
           <div class="col">
             <div class="card h-100">
-              <div class="card-header bg-danger text-white">SELASA</div>
+              <div class="card-header bg-primary text-black">SELASA</div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   Sistem Operasi<br />09.30-12.00 | H.3.11
@@ -205,7 +205,7 @@ include "koneksi.php";
           </div>
           <div class="col">
             <div class="card h-100">
-              <div class="card-header bg-danger text-white">RABU</div>
+              <div class="card-header bg-primary text-black">RABU</div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   Penambangan Data<br />09.30-12.00 | H.4.9
@@ -218,7 +218,7 @@ include "koneksi.php";
           </div>
           <div class="col">
             <div class="card h-100">
-              <div class="card-header bg-danger text-white">KAMIS</div>
+              <div class="card-header bg-primary text-black">KAMIS</div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   Pemrograman Berbasis Web<br />12.30-14.10 | Kulino
@@ -231,7 +231,7 @@ include "koneksi.php";
           </div>
           <div class="col">
             <div class="card h-100">
-              <div class="card-header bg-danger text-white">JUMAT</div>
+              <div class="card-header bg-primary text-black">JUMAT</div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   Basis Data<br />10.20-12.00 | H.5.14
@@ -241,7 +241,7 @@ include "koneksi.php";
           </div>
           <div class="col">
             <div class="card h-100">
-              <div class="card-header bg-danger text-white">SABTU</div>
+              <div class="card-header bg-primary text-black">SABTU</div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">SLEEP</li>
               </ul>
@@ -249,7 +249,7 @@ include "koneksi.php";
           </div>
           <div class="col">
             <div class="card h-100">
-              <div class="card-header bg-danger text-white">MINGGU</div>
+              <div class="card-header bg-primary text-black">MINGGU</div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">SLEEP</li>
               </ul>
@@ -285,13 +285,11 @@ include "koneksi.php";
     <!-- footer begin -->
     <footer id="footer" class="text-center p-5">
       <div>
-        <a href="https://www.instagram.com/udinusofficial"
+        <a href="https://www.instagram.com/labib.za/"
           ><i class="bi bi-instagram h2 p-2"></i
         ></a>
-        <a href="https://twitter.com/udinusofficial"
-          ><i class="bi bi-twitter h2 p-2"></i
-        ></a>
-        <a href="https://wa.me/+62812685577"
+        </a>
+        <a href="https://wa.me/+6282123458705"
           ><i class="bi bi-whatsapp h2 p-2"></i
         ></a>
       </div>
@@ -329,21 +327,21 @@ include "koneksi.php";
 
         document
           .getElementById("hero")
-          .classList.remove("bg-danger-subtle", "text-black");
+          .classList.remove("bg-primary-subtle", "text-black");
         document
           .getElementById("hero")
           .classList.add("bg-secondary", "text-white");
 
         document
           .getElementById("gallery")
-          .classList.remove("bg-danger-subtle", "text-black");
+          .classList.remove("bg-primary-subtle", "text-black");
         document
           .getElementById("gallery")
           .classList.add("bg-secondary", "text-white");
 
         document
           .getElementById("aboutme")
-          .classList.remove("bg-danger-subtle", "text-black");
+          .classList.remove("bg-primary-subtle", "text-black");
         document
           .getElementById("aboutme")
           .classList.add("bg-secondary", "text-white");
@@ -359,10 +357,10 @@ include "koneksi.php";
 
         const collection = document.getElementsByClassName("card");
         for (let i = 0; i < collection.length; i++) {
-          collection[i].classList.add("bg-secondary", "text-white");
+          collection[i].classList.add("bg-white", "text-black");
         }
 
-        const collection2 = document.getElementsByClassName("list-group-item");
+        const collection2 = document.getElementsByClassName("card-header");
         for (let i = 0; i < collection2.length; i++) {
           collection2[i].classList.add("bg-secondary", "text-white");
         }
@@ -376,21 +374,21 @@ include "koneksi.php";
           .classList.remove("bg-secondary", "text-white");
         document
           .getElementById("hero")
-          .classList.add("bg-danger-subtle", "text-black");
+          .classList.add("bg-primary-subtle", "text-black");
 
         document
           .getElementById("gallery")
           .classList.remove("bg-secondary", "text-white");
         document
           .getElementById("gallery")
-          .classList.add("bg-danger-subtle", "text-black");
+          .classList.add("bg-primary-subtle", "text-black");
 
         document
           .getElementById("aboutme")
           .classList.remove("bg-secondary", "text-white");
         document
           .getElementById("aboutme")
-          .classList.add("bg-danger-subtle", "text-black");
+          .classList.add("bg-primary-subtle", "text-black");
 
         document.getElementById("footer").classList.remove("text-white");
         document.getElementById("footer").classList.add("text-black");
@@ -406,7 +404,7 @@ include "koneksi.php";
           collection[i].classList.remove("bg-secondary", "text-white");
         }
 
-        const collection2 = document.getElementsByClassName("list-group-item");
+        const collection2 = document.getElementsByClassName("card-header");
         for (let i = 0; i < collection2.length; i++) {
           collection2[i].classList.remove("bg-secondary", "text-white");
         }

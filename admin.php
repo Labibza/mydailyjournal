@@ -15,7 +15,7 @@ if (!isset($_SESSION['username'])) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Daily Journal | Admin</title>
-    <link rel="icon" href="img/logo.png" />
+    <link rel="icon" href="img/Lbb.svg" />
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
@@ -45,7 +45,7 @@ if (!isset($_SESSION['username'])) {
 </head>
 <body>
     <!-- nav begin -->
-    <nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top bg-danger-subtle">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top bg-primary-subtle">
     <div class="container">
         <a class="navbar-brand" target="_blank" href=".">My Daily Journal</a>
         <button
@@ -86,12 +86,12 @@ if (!isset($_SESSION['username'])) {
             <?php
             if(isset($_GET['page'])){
             ?>
-                <h4 class="lead display-6 pb-2 border-bottom border-danger-subtle"><?= ucfirst($_GET['page'])?></h4>
+                <h4 class="lead display-6 pb-2 border-bottom border-primary-subtle"><?= ucfirst($_GET['page'])?></h4>
                 <?php
                 include($_GET['page'].".php");
             }else{
             ?>
-                <h4 class="lead display-6 pb-2 border-bottom border-danger-subtle">Dashboard</h4>
+                <h4 class="lead display-6 pb-2 border-bottom border-primary-subtle">Dashboard</h4>
                 <?php
                 include("dashboard.php");
             }
