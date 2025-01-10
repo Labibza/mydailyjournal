@@ -65,7 +65,7 @@ include "upload_gallery.php";
 if (isset($_POST['simpan'])) {
     $tanggal = date("Y-m-d H:i:s");
     $username = $_SESSION['username'];
-    $gambar = $_POST[''];
+    $gambar = [''];
     $nama_gambar = $_FILES['gambar']['name'];
 
     //jika ada file yang dikirim  
@@ -112,8 +112,8 @@ if (isset($_POST['simpan'])) {
         $simpan = $stmt->execute();
     } else {
 		    //jika tidak ada id, lakukan insert data baru
-        $stmt = $conn->prepare("INSERT INTO gallery (gambar,tanggal,username,id)
-                                VALUES (?,?,?,?)");
+        $stmt = $conn->prepare("INSERT INTO gallery (gambar,tanggal,username)
+                                VALUES (?,?,?)");
 
         $stmt->bind_param("sss", $gambar, $tanggal, $username);
         $simpan = $stmt->execute();
