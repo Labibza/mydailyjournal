@@ -136,40 +136,51 @@ include "koneksi.php";
     <!-- article end -->
     <!-- gallery begin -->
     <section id="gallery" class="text-center p-5 bg-primary-subtle">
-      <div class="container">
+        <div class="container">
         <h1 class="fw-bold display-4 pb-3">Galeri</h1>
         <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://cdn.rri.co.id/berita/8/1676086521-blob" class="d-block w-100" height="700" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="https://dinus.ac.id/wp-content/uploads/2024/06/WhatsApp-Image-2024-05-06-at-10.58.19_11f70142-scaled.jpg" class="d-block w-100" height="700" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="https://dinus.ac.id/wp-content/uploads/2024/08/Profil-Labib-1080x675.jpeg" class="d-block w-100" height="700" alt="..." />
-            </div>
-          </div>
-          <button
+        <div class="carousel-inner">
+            <?php
+            // Menghubungkan ke database dan mengambil data gambar dari tabel gallery
+            $sql = "SELECT * FROM gallery ORDER BY tanggal DESC";
+            $hasil = $conn->query($sql);
+            
+            // Menentukan item pertama untuk menjadi 'active'
+            $first_item = true;
+            
+            while($row = $hasil->fetch_assoc()){
+                $active_class = $first_item ? 'active' : ''; // Menandai item pertama dengan kelas active
+                $first_item = false; // Hapus status aktif setelah item pertama
+            ?>
+                <div class="carousel-item <?= $active_class ?>">
+                    <img src="img/<?= $row["gambar"]?>" class="card-img-top" alt="..." />
+                </div>
+            <?php
+            }
+            ?>
+        </div>
+        
+        <!-- Tombol navigasi carousel -->
+        <button
             class="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExample"
             data-bs-slide="prev"
-          >
+        >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
-          </button>
-          <button
+        </button>
+        <button
             class="carousel-control-next"
             type="button"
             data-bs-target="#carouselExample"
             data-bs-slide="next"
-          >
+        >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-          </button>
+        </button>
         </div>
-      </div>
+    </div>
     </section>
     <!-- gallery end -->
     <!-- schedule begin -->

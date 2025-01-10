@@ -46,7 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
 	//menutup koneksi database
-  $stmt->close();
+//   $stmt->close();
+  echo $stmt->error; // Untuk melihat error pada query
+
   $conn->close();
 } else {
 ?>
